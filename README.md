@@ -7,7 +7,7 @@ As we cannot share the entire dataset, only provide some pictures of scene1 for 
 
 For testing our code, run the shell file:
 
-** Installation requirements ** 
+## Installation requirements 
 
 We run this code using GeForce RTX 3090 in following environment.
 
