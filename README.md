@@ -14,7 +14,7 @@ Pytorch ==1.10
 CUDA >=9.0
 ```
 
-# testing
+# Testing
 To run this code,
 ```
 git clone https://github.com/min-jung-shin/MosaicMVS.git
