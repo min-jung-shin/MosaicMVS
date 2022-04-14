@@ -7,7 +7,7 @@ As we cannot share the entire dataset, only provide some pictures of scene1 for 
 
 For testing our code, run the shell file:
 
-# Installation requirements
+** Installation requirements ** 
 
 We run this code using GeForce RTX 3090 in following environment.
 
@@ -37,7 +37,6 @@ To fusion output depthmaps,
 
 ```
 CUDA_VISIBLE_DEVICES=0,1 python fusioncas.py -data <dir_of_depths> --pair <dir_of_pair> --vthresh 3 --pthresh .8,.8,.8 --outmask <dir_of_masks> --out_dir <dir_of_output pointcloud>
-
 ```
 For reconstrction evaluation, refer to the code in the python fusioncas.py. 
 
