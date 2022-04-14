@@ -17,13 +17,13 @@ Pytorch ==1.10
 CUDA >=9.0
 ```
 
-# Dataset
+## Dataset
 
 Parts of the scene1 images in SAOI dataset are uploaded in scene1 folder for testing.
 For more datasets you needed, please contact us.
 
 ---
-# Testing
+## Testing
 
 To run this code,
 ```
@@ -31,7 +31,7 @@ git clone https://github.com/min-jung-shin/MosaicMVS.git
 sh test_mosaic.sh
 ```
 
-# Fusion
+## Fusion
 
 To fusion output depthmaps,
 
@@ -45,15 +45,16 @@ For reconstrction evaluation, refer to the code in the python fusioncas.py.
 ```
 ---
 
-# Evaluation of estimated depth map
+## Evaluation of estimated depth map
 
 To evaluate depth map, COLMAP sparse reconstruction depthmaps are needed.
 You can run the [COLMAP](https://github.com/colmap/colmap). 
 
-# Customed mosaic images
+## Customed mosaic images
 
 If you capture customed mosaic images, you must run the [COLMAP](https://github.com/colmap/colmap) to obtain undistorted image, and camera parameters.
 
-# Acknowledgements
+
+## Acknowledgements
 
 Thanks to Xiaodong Gu for opening source of his excellent work CasMVSNet. Thanks to Jingyang Zhang of his excellent work Vis-MVSNet.
