@@ -171,9 +171,9 @@ if __name__ == '__main__':
 
     parser.add_argument('--data', type=str, default='')
     parser.add_argument('--pair', type=str, default='')
-    parser.add_argument('--view', type=int, default=10)
-    parser.add_argument('--vthresh', type=int, default=4)
-    parser.add_argument('--pthresh', type=str, default='.8,.7,.8')
+    parser.add_argument('--view', type=int, default=24)
+    parser.add_argument('--vthresh', type=int, default=3)
+    parser.add_argument('--pthresh', type=str, default='.8,.8,.8')
     parser.add_argument('--cam_scale', type=float, default=1)
     # parser.add_argument('--show_result', action='store_true', default=False)
     parser.add_argument('--downsample', type=float, default=None)
@@ -317,4 +317,4 @@ if __name__ == '__main__':
         print('Down sample')
         pcd = pcd.voxel_down_sample(args.downsample)
 
-    o3d.io.write_point_cloud(os.path.join(args.out_dir, 'scene3_num_24_not_applied_AACVP_our_depth_our_fusion.ply'), pcd, print_progress=True)
+    o3d.io.write_point_cloud(os.path.join(args.out_dir, 'scene3_num_24_fusion.ply'), pcd, print_progress=True)
