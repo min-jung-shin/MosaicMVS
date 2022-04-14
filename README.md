@@ -1,4 +1,8 @@
-# MosaicMVS
+# MosaicMVS: Mosaic-based Omnidirectional Multi-view Stereo for Indoor Scenes
+---
+<img width="1835" alt="Figure_1_2" src="https://user-images.githubusercontent.com/65907536/163343364-63e6b2ca-7ff4-47ac-8b65-05ebb0cf4297.png">
+---
+
 Official source code of paper MosaicMVS: Mosaic-based Omnidirectional Multi-view Stereo for Indoor Scenes
 
 As we cannot share the entire dataset, only provide some pictures of scene1 for testing.
@@ -37,6 +41,7 @@ For reconstrction evaluation, refer to the code in the python fusioncas.py.
 ```
 ("total.mean: ", sum(total)/len(total))
 ```
+---
 # Evaluation of estimated depth map
 To evaluate depth map, COLMAP sparse reconstruction depthmaps are needed.
 You can run the [COLMAP](https://github.com/colmap/colmap). 
