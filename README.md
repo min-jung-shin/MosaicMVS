@@ -17,12 +17,25 @@ Pytorch ==1.10
 CUDA >=9.0
 ```
 
-## Dataset
+## Data preparation
+
+### SAOI Dataset
 
 Parts of the scene1 images in SAOI dataset are uploaded in scene1 folder for testing.
 
 For more datasets you needed, please contact us.
 
+### Customed mosaic images
+
+If you capture customed mosaic images, you must run the [COLMAP](https://github.com/colmap/colmap) to obtain undistorted image, and camera parameters.
+You need following datas with your images, 
+
+```
+Undistorted images (RGB)
+Intrinsic 
+Extrinsics
+View selection text (pair.txt)
+```
 ---
 ## Testing
 
@@ -50,14 +63,6 @@ For reconstrction evaluation, refer to the code in the python fusioncas.py.
 
 To evaluate depth map, COLMAP sparse reconstruction depthmaps are needed.
 You can run the [COLMAP](https://github.com/colmap/colmap). 
-
-
-
-
-## Customed mosaic images
-
-If you capture customed mosaic images, you must run the [COLMAP](https://github.com/colmap/colmap) to obtain undistorted image, and camera parameters.
-
 
 
 
