@@ -13,6 +13,8 @@ python >=3.7
 Pytorch ==1.10
 CUDA >=9.0
 ```
+# Dataset
+Parts of the scene1 images in SAOI dataset are uploaded in scene1 folder for testing.
 
 # Testing
 To run this code,
@@ -22,9 +24,20 @@ sh test_mosaic.sh
 ```
 
 # Fusion
-To fusion output depthmaps
+To fusion output depthmaps,
+
 ```
 CUDA_VISIBLE_DEVICES=0,1 python fusioncas.py -data <dir_of_depths> --pair <dir_of_pair> --vthresh 3 --pthresh .8,.8,.8 --outmask <dir_of_masks> --out_dir <dir_of_output pointcloud>
+
 ```
+For reconstrction evaluation, refer to the code in the python fusioncas.py. 
+
+```
+("total.mean: ", sum(total)/len(total))
+```
+# Evaluation of estimated depth map
+To evaluate depth map, COLMAP sparse reconstruction depthmaps are needed.
+You can run the colmap in [COLMAP](https://github.com/colmap/colmap). 
+
 # Acknowledgements
 Thanks to Xiaodong Gu for opening source of his excellent work CasMVSNet. Thanks to Jingyang Zhang of his excellent work Vis-MVSNet.
