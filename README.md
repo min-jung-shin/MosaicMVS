@@ -50,9 +50,14 @@ For reconstrction evaluation, refer to the code in the python fusioncas.py.
 To evaluate depth map, COLMAP sparse reconstruction depthmaps are needed.
 You can run the [COLMAP](https://github.com/colmap/colmap). 
 
+
+
+
 ## Customed mosaic images
 
 If you capture customed mosaic images, you must run the [COLMAP](https://github.com/colmap/colmap) to obtain undistorted image, and camera parameters.
+
+
 
 
 ## Acknowledgements
