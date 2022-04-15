@@ -430,20 +430,15 @@ class FeatureNet(nn.Module):
                 self.out_channels.append(base_channels)
 
     def forward(self, x):
-        # print("x", x.shape)
         conv0 = self.conv0(x)
-        # print("conv0", conv0.shape)
         conv1 = self.conv1(conv0)
-        # print("conv1", conv1.shape)
         conv2 = self.conv2(conv1)
-        # print("conv2", conv2.shape)
 
         intra_feat = conv2
 
         outputs = {}
         out = self.out1(intra_feat)
         outputs["stage1"] = out
-        # print("out", out.shape)
 
         if self.arch_mode == "unet":
             if self.num_stage == 3:
@@ -464,20 +459,17 @@ class FeatureNet(nn.Module):
             if self.num_stage == 3:
                 intra_feat = F.interpolate(intra_feat, scale_factor=2, mode="nearest") + self.inner1(conv1)
                 # intra_feat = F.interpolate(intra_feat, size=[1007, 1529], mode="nearest") + self.inner1(conv1)
-                # print("stage2", intra_feat.shape)
                 out = self.out2(intra_feat)
                 outputs["stage2"] = out
 
                 intra_feat = F.interpolate(intra_feat, scale_factor=2, mode="nearest") + self.inner2(conv0)
                 # intra_feat = F.interpolate(intra_feat, size=[2014, 3057], mode="nearest") + self.inner2(conv0)
-                # print("stage3", intra_feat.shape)
                 out = self.out3(intra_feat)
                 outputs["stage3"] = out
 
             elif self.num_stage == 2:
                 intra_feat = F.interpolate(intra_feat, scale_factor=2, mode="nearest") + self.inner1(conv1)
                 # intra_feat = F.interpolate(intra_feat, size=[1007, 1529], mode="nearest") + self.inner1(conv1)
-                # print("intra_feat", intra_feat.shape)
                 out = self.out2(intra_feat)
                 outputs["stage2"] = out
 
@@ -515,7 +507,6 @@ class CostRegNet(nn.Module):
         x = conv2 + self.conv9(x)
         x = conv0 + self.conv11(x)
         x = self.prob(x)
-        #print("cost_reg_output_shape : ", x.shape)
         return x
 
 
