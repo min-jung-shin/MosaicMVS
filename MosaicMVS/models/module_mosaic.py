@@ -312,26 +312,16 @@ def homo_warping(src_fea, src_proj, ref_proj, depth_values):
 
         y, x = torch.meshgrid([torch.arange(0, height, dtype=torch.float32, device=src_fea.device),
                                torch.arange(0, width, dtype=torch.float32, device=src_fea.device)])
-        # print("y.shape_1 : ",y.shape)
-        # print("x.shape_1 : ",x.shape)
         y, x = y.contiguous(), x.contiguous()
-        # print("y.shape_2 : ",y.shape)
-        # print("x.shape_2 : ",x.shape)
         y, x = y.view(height * width), x.view(height * width)
-        # print("y.shape_3 : ",y.shape)
-        # print("x.shape_3 : ",x.shape)
+
         xyz = torch.stack((x, y, torch.ones_like(x)))  # [3, H*W]
-        # print("xyz_shape_1: ",xyz.shape)
         xyz = torch.unsqueeze(xyz, 0).repeat(batch, 1, 1)  # [B, 3, H*W]
-        # print("xyz_shape_2: ", xyz.shape)
+        
         rot_xyz = torch.matmul(rot, xyz)  # [B, 3, H*W]
-        # print("rot_xyz_shape_1: ", rot_xyz.shape)
         rot_depth_xyz = rot_xyz.unsqueeze(2).repeat(1, 1, num_depth, 1) * depth_values.view(batch, 1, num_depth, -1)  # [B, 3, Ndepth, H*W]
-        # print("rot_xyz_shape_2: ", rot_depth_xyz.shape)
         proj_xyz = rot_depth_xyz + trans.view(batch, 3, 1, 1)  # [B, 3, Ndepth, H*W]
-        # print("proj_xyz_shape_1: ", proj_xyz.shape)
         proj_xy = proj_xyz[:, :2, :, :] / proj_xyz[:, 2:3, :, :]  # [B, 2, Ndepth, H*W]
-        # print("proj_xy_shape: ", proj_xy.shape)
         proj_x_normalized = proj_xy[:, 0, :, :] / ((width - 1) / 2) - 1
         proj_y_normalized = proj_xy[:, 1, :, :] / ((height - 1) / 2) - 1
         proj_xy = torch.stack((proj_x_normalized, proj_y_normalized), dim=3)  # [B, Ndepth, H*W, 2]
