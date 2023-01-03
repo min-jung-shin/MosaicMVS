@@ -21,7 +21,9 @@ CUDA >=9.0
 
 ### SAOI Dataset
 
-Parts of the scene1 images in SAOI dataset are uploaded in scene1 folder for testing.
+This dataset consists of 11 scenes.
+
+Parts of the scene 1 RGB images in SAOI dataset are uploaded in scene1 folder for implementation.
 
 For more datasets you needed, please contact us.
 
