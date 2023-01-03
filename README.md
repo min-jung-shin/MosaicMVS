@@ -1,7 +1,7 @@
 # MosaicMVS: Mosaic-based Omnidirectional Multi-view Stereo for Indoor Scenes
 <img width="1835" alt="Figure_1_2" src="https://user-images.githubusercontent.com/65907536/163343364-63e6b2ca-7ff4-47ac-8b65-05ebb0cf4297.png">
 
-This is the official implementation for the 2023 Transactions on Multimedia(early accept) paper, [MosaicMVS: Mosaic-based Omnidirectional Multi-view Stereo for Indoor Scenes](https://ieeexplore.ieee.org/document/10005048).
+This is the official implementation for the 2023 Transactions on Multimedia (Early Access) paper, [MosaicMVS: Mosaic-based Omnidirectional Multi-view Stereo for Indoor Scenes](https://ieeexplore.ieee.org/document/10005048).
 
 As we cannot share the entire dataset, only provide some pictures of scene1 for testing.
 
